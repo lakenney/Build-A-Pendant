@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HTML5 Template</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!--<link rel="stylesheet" href="css/styles.css">-->
+
+<!-- BUILD A PENDANT PAGE with paypal form -->
+	<!--css-->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/features.css">
+	<link rel="stylesheet" href='css/responsive.css'>
+
+</head>
+<body>
+
+<div id="wrapper">	
+
+      <!--Simple AJAX call to load Qundl Inc API: https://www.quandl.com/resources/api-for-commodity-data-->
+
+      <h3 class="latest-values-title pendant">End Of Day Silver Price Per Troy Oz:</h3>
+     <div class="silver">
+      <ul class="latest-values-list">
+
+        <li class="latest-value-item">
+          <span class="latest-value-label">Date:</span><span class="latest-value" id="date"></span>
+        </li>
+      
+        <li class="latest-value-item">
+          <span class="latest-value-label">USD:</span><span class="latest-value" id="usd"></span>
+        </li>
+
+        <li class="latest-value-item">
+          <span class="latest-value-label">GBP:</span><span class="latest-value" id="gbp"></span>
+        </li>
+      
+        <li class="latest-value-item">
+          <span class="latest-value-label">EURO:</span><span class="latest-value" id="euro"></span>
+        </li>
+      </ul>
+
+      <br>
+    </div><!-- silver-->
+
+		<h1 class='pendant'>Build a Pendant</h1>
+
+		<!-- Left side with all the controls -->
+		<div id='controls'>
+			<p class='intro-para'>
+				Let hand stamped words on the elegant beauty of fine silver or bronze carry a message of love and inspiration to someone special. 
+				The charm of hand stamping is its random organic look, not precise or machine made. 
+			
+			</P>
+				<hr>
+				<div id="radioLeft">
+					<h2>Pick a shape</h2>
+							<label>
+								<input type="radio" name="shapes" value="circle" checked>circle
+							</label>
+							<input type="radio" name="shapes" value="square">
+							<label>square</label>
+							<input type="radio" name="shapes" value="heart">
+							<label>heart</label>
+							<br>
+						<br>
+
+				<hr>
+					<h2>Pick a size</h2>
+						<input type="radio" name="size" value="sm">sm
+						<input type="radio" name="size" value="md" checked>md
+						<input type="radio" name="size" value="lg">lg
+										<hr>
+					<h2>Pick a metal</h2>
+							<input type="radio" name="metals" value="silver" checked>silver
+							<input type="radio" name="metals" value="bronze">
+							bronze<br>
+						<br>
+
+				</div>
+	                    <br><br>
+							This pendant costs: $<span id='output'>30.00</span>
+						<br><br>
+			<!-- Message -->	
+				<h2>Type a message</h2>
+					<input type='text' id='message' class="changeMe resetMe" maxlength="16"> 
+					<div id='message-error'>Max 16 characters</div>
+					<br>
+					<!--Select font-->
+				<h2>Select a different font and size?</h2>
+	    			<select id="fs"> 
+	        			<option value="Arial">Arial</option>
+	        			<option value="Verdana ">Verdana </option>
+	        			<option value="Impact ">Impact </option>
+	        			<option value="CenturyGothic">Gothic</option>
+	    			</select>
+	    			<!--Select font size-->
+	    			<select id="fontsize">
+	        			<option value="12" selected>12 px</option>
+	        			<option value="24">24 px</option>
+	    			</select>
+				<br><br>
+
+			<h2>Would you like a chain to go with that?</h2>
+
+          <div id="selects">
+            <div id="select1Div" style="float:left;margin-right:15px;"> Select
+              A Chain<br>
+              
+              <select name="firstSelect" id="firstSelect">
+                <option>style</option>
+              </select>
+            </div>
+
+            <div id="select2Div"> Select A Length
+              <br>
+              <select name="secondSelect" id="secondSelect">
+                <option>length</option>
+                &nbsp;
+              </select>
+            </div>
+            <span id="feedback"></span>
+          </div>
+		</div><!--end controls-->
+
+		<!-- Right side with the live preview -->
+		<div id='preview'>
+				<div id='preview-background'>
+					<div id='canvas'>
+						<div id='pendant-container'>
+							<div id='pendant_c'>
+								<img src='images/circle-md-silver.png' width="" height="" alt="Medium Round Silver Pendant blank default">
+							</div><!--end pendant_c-->
+						</div><!--end pendant-container-->
+						
+						<div id='message-window'>
+							<div id='message-output' class='changeMe'></div>
+						</div><!--end message-window-->	
+
+					</div><!--end canvas-->
+
+					<!-- Total pendant cost-->
+					<!--Total: $<span id='total'>0.00</span> <br><br>-->
+				</div><!--end preview-background-->
+				
+				<!-- Buttons -->
+				<input type='button' id='refresh-btn' value='Start over'>
+				<input type='button' id='print-btn' value='Print'>
+				<!--<input type='button' id='buy' value='Buy'>-->
+
+		<!-- Paypal purchase -->
+		<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		<input type="hidden" name="cmd" value="_cart">
+		<input type="hidden" name="business" value="lakenney@rcn.com">
+		<input type="image" src="http://virtualwindowshopping.com/images/navViewCart.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+		<input type="hidden" name="display" value="1">
+		</form>
+
+		<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		<input type="image" id='buy-now' src="http://virtualwindowshopping.com/images/buyNowbutton.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+		<input type="hidden" name="add" value="1">
+		<input type="hidden" name="cmd" value="_cart">
+		<input type="hidden" name="business" value="lakenney@rcn.com">
+		<input type="hidden" name="item_name" id="paypalShapeSizeMetal" value="circle md silver">
+
+		<!--<input type="hidden" name="on0" id='paypalMessage' value="LUV">-->
+
+		<input type="hidden" name="on0" id="paypalMessage" value="paypalMessage">
+		<!--paypalMessage<input type="text" name="os0" maxlength="200">-->
+
+		<input type="hidden" name="item_number" id="pendant" value="pendant">
+		<input type="hidden" name="amount" id="paypalPrice" value="30">
+		<input type="hidden" name="shipping" value="0.00">
+		<input type="hidden" name="no_shipping" value="2">
+		<input type="hidden" name="currency_code" value="USD">
+		<input type="hidden" name="lc" value="US">
+		<input type="hidden" name="bn" value="PP-ShopCartBF">
+		</form>
+		<!-- end Paypal purchase -->	
+		<br><br>
+
+		</div><!-- end right side live preview-->
+
+</div><!--wrapper-->
+<script src="js/jquery-1.11.0.js"></script>
+<script src="js/pendant.js"></script>
+<script src="js/final.js"></script>
+
+<!--<script src="js/stock_order.js"></script>-->
+</body>
+</html>

@@ -1,0 +1,681 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0b1 | 201101 
+   NOTE: WORK IN PROGRESS
+   USE WITH CAUTION AND TEST WITH ABANDON */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	/*font-size: 100%;*/
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	font-family: 'PT Sans';
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*begin Ian Yates Mobile First Responsive styles tweaked to suit my needs*/
+
+body {
+	font: 16px/1.4em 'PT Sans', sans-serif;;
+	color: #1c1c1c;
+}
+
+p,
+ul {
+	margin: 0 0 1.5em;
+}
+
+ul {
+	list-style: disc;
+	padding: 0 0 0 20px;
+}
+
+a {
+	color: #666666;
+}
+
+h1 {
+	font-size: 24px;
+	line-height: 48px;
+}
+
+h2 {
+	font-size: 18px;
+	line-height: 1.4em;
+	margin: 0 0 .4em;
+	font-weight: normal;
+}
+
+/*layout*/
+
+article {
+	border-bottom: 1px solid #d8d8d8;
+	padding: 30px 20px 0 20px;
+	margin: 10px 0;
+	background: #f2f2f2;
+}
+
+/*header*/
+header {
+	background: #49afcc;
+	padding: 15px 20px;
+}
+
+		/*shorter clearfix http://nicolasgallagher.com/micro-clearfix-hack/*/
+		header:before,
+		header:after {
+		    content:"";
+		    display:table;
+		}
+		
+		header:after {
+		    clear:both;
+		}
+		
+		/* For IE 6/7 (trigger hasLayout) */
+		header {
+		    zoom:1;
+		}
+		/* end nicolas gallagher */
+		
+		/**  http://nicolasgallagher.com/micro-clearfix-hack/
+ 		* For modern browsers
+ 		* 1. The space content is one way to avoid an Opera bug when the
+ 		*    contenteditable attribute is included anywhere else in the document.
+ 		*    Otherwise it causes space to appear at the top and bottom of elements
+ 		*    that are clearfixed.
+ 		* 2. The use of `table` rather than `block` is only necessary if using
+ 		*    `:before` to contain the top-margins of child elements.
+ 		*/
+		.cf:before,
+		.cf:after {
+    		content: " "; /* 1 */
+    		display: table; /* 2 */
+		}
+
+		.cf:after {
+    		clear: both;
+		}
+
+		/**
+ 		* For IE 6/7 only
+ 		* Include this rule to trigger hasLayout and contain floats.
+ 		*/
+		.cf {
+    		*zoom: 1;
+		}
+
+h1.logo a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 30px;
+	line-height: 22px;
+	float: left;
+	letter-spacing: 0.2em;
+}
+
+a.to_nav {
+	float: right;
+	color: #fff;
+	background: #4e4e4e;
+	text-decoration: none;
+	padding: 0 10px;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 22px;
+	height: 22px;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+a.to_nav:hover,
+a.to_nav:focus {
+	color: #1c1c1c;
+	background: #d8d8d8;
+}
+	
+/*primary navigation*/	
+#primary_nav ul {
+	list-style: none;
+	background: #49afcc;
+	padding: 5px 0;
+}
+
+#primary_nav li a {
+	display: block;
+	padding: 0 20px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	letter-spacing: 0.1em;
+	line-height: 2em;
+	height: 2em;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+#primary_nav li:last-child a {
+	border-bottom: none;
+}
+
+#primary_nav li a:hover,
+#primary_nav li a:focus {
+	color: #1c1c1c;
+	background: #ccc;
+}
+
+/* styles for the 'highlightnavigation.js file navigation active */
+#primary_nav ul li#iamhere a,
+#primary_nav ul li#iamhere a:link,
+#primary_nav ul li#iamhere a:visited,
+#primary_nav ul li#iamhere a:hover { 	
+	color: #fff; 
+	background: #ccc;
+	/*background:transparent; 	
+	border-bottom: 10px solid #383838;*/
+}
+
+/*nav for access to login*/	
+#access ul {
+	list-style: none;
+	background: transparent;
+	padding: 5px 0;
+}
+
+#access li a {
+	display: block;
+	padding: 0 20px;
+	color: #49afcc;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	letter-spacing: 0.1em;
+	line-height: 2em;
+	height: 2em;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+#access li:last-child a {
+	border-bottom: none;
+}
+
+#access li a:hover,
+#access li a:focus {
+	color: #1c1c1c;
+	background: #ccc;
+}
+
+/* styles for the 'highlightnavigation.js file navigation active */
+#access ul li#iamhere a,
+#access ul li#iamhere a:link,
+#access ul li#iamhere a:visited,
+#access ul li#iamhere a:hover { 	
+	color: #fff; 
+	background: #999;
+	/*background:transparent; 	
+	border-bottom: 10px solid #383838;*/
+}
+
+/*nav for access to logout*/	
+#access_out {
+	position: absolute;
+	top: 55px;
+	right: 10px;
+	background: transparent;
+}
+
+#access_out ul {
+	list-style: none;
+	background: transparent;
+	padding: 7px 0;
+}
+
+#access_out li {
+	display: inline;
+}
+
+#access_out li a {
+	float: left;
+	border: none;
+	padding: 0 10px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+#access_out li a {
+	display: block;
+	padding: 0 20px;
+	color: #4c4c4c;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	letter-spacing: 0.1em;
+	line-height: 2em;
+	height: 2em;
+	/*border-bottom: 1px solid #383838;*/
+}
+
+#access_out li:last-child a {
+	border-bottom: none;
+}
+
+#access_out li a:hover,
+#access_out li a:focus {
+	color: #1c1c1c;
+	background: #ccc;
+}
+
+/* styles for the 'highlightnavigation.js file navigation active */
+#access_out ul li#iamhere a,
+#access_out ul li#iamhere a:link,
+#access_out ul li#iamhere a:visited,
+#access_out ul li#iamhere a:hover { 	
+	color: #fff;
+	background: #999;
+}
+
+/* More css */
+
+.members {
+	float:left;
+}
+
+.newPost {
+	margin-left: 30%;
+}
+
+.talkers {
+	margin-left: 30%;
+
+}
+
+.followed {
+	background: #fff;
+}
+
+.users {
+	height: auto;
+	width: 130px;
+	border-bottom: 1px solid #d8d8d8;
+	padding: 10px 5px 0 20px;
+	margin: 10px 0;
+}
+
+.users ul {
+	display: block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.users li a {
+	display: block;
+	width: 60px;
+}
+
+.talker ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+.talker li {
+
+}
+
+.talker li a {
+	display:inline;
+	width:60px;
+}
+
+.name {
+	color:#49afcc;
+}
+
+ul .website a {
+	font-size: small;
+	color: #999;
+	text-decoration: none;
+}
+
+ul .website a:hover {
+	color: #999;
+	text-decoration: underline;
+}
+
+time {
+	font-size: smaller;
+	color: #dadada;
+}
+
+span {
+	color: #999;
+}
+
+p {
+	line-height: 1.5em;
+	font-size: 100%;
+}
+
+.error {
+	color:#FF0000;
+}
+
+input[type="button"], 
+input[type="submit"], 
+input[type="reset"], 
+input[type="file"]::-webkit-file-upload-button,
+button {
+	line-height: 6px;
+	color: #fff;
+	/*font-size: 12px;*/
+	background: #ccc;
+	border: 0;
+	text-decoration: none;
+	padding-top: 5px;
+	padding-bottom: 7px;
+}
+input[type="submit"]:hover {
+	background: #999;
+}
+
+/* Removed because of </a> button error nesting
+#confirmDelete {
+	float: right;
+	margin-right: 50px;
+}
+
+a #confirmDelete {
+	float: right;
+	margin-right: 50px;
+}
+
+a #buttonDelete {
+	padding: 5px;
+	float: right;
+	margin-right: 0px;
+}
+*/
+/* Follow Unfollow button */
+/*button a {
+	float: none;
+	color: #fff;
+	text-decoration: none;
+	margin-left: 0px;
+	text-align: center:
+	height: 50px;
+}
+
+button {
+  	height: 22px;
+  	margin: 0px 0 0 0px;
+	border: 0;
+  	overflow: hidden;
+  	display: block;
+  	text-align: center;
+  	line-height: 10px;
+}
+
+/* Delete Post button*/
+/*button:hover  {
+	color: #fff;
+  	background: #999;
+  	text-decoration: none;
+	border:none;
+}
+
+.confirmDelete {
+	float:right;
+	margin-left: 20px;
+	margin-right: 50px;
+	margin-bottom: 20px;
+}
+*/
+
+.bRight {
+	display: block;
+}
+
+a.buttonLink {
+	line-height: 6px;
+	color: #fff;
+	font-size: 12px;
+	background: #ccc;
+	border: 0;
+	text-decoration: none;
+	padding: 3px;
+}
+
+.buttonLink:hover, .button-link:focus {
+	color: #fff;
+  	background: #999;
+  	text-decoration: none;
+	border:none;
+}
+
+.buttonLink:active {
+	color: #fff;
+  	background: #999;
+  	text-decoration: none;
+	border:none;
+}
+
+/* Disable text select */
+
+
+/*footer*/
+
+.clearfix {
+	clear:both;
+}
+footer {
+	font-family: 'PT Serif', serif;
+	color: #e4e4e4;
+	height: 50px;
+	font-style: italic;
+	text-align: center;
+	vertical-align: -50px;
+	font-size: 14px;
+	background: #49afcc;
+	padding: 0 10px 10px 10px;
+	clear:both;
+}
+
+#mySpan {
+	padding-top: 12px;
+}
+
+/*media queries*/
+
+@media only screen and (min-width: 768px) {
+		
+	a.to_nav {
+		display: none;
+	}
+			
+	.wrapper {
+		position: relative;
+		width: 768px;
+		margin: auto;
+	}
+
+	.talker ul {
+		/*float:left;*/
+		list-style-type:none;
+		margin:0;
+	}
+
+	.talker li {
+		display:inline;
+		padding-right: 20px;
+	}
+
+	.name {
+		color:#49afcc;
+	}
+
+	.content {
+
+	}
+	/* primary navigation */
+	#primary_nav {
+		position: absolute;
+		top: 5px;
+		right: 10px;
+		background: transparent;
+	}
+			
+	#primary_nav li {
+		display: inline;
+	}
+			
+	#primary_nav li a {
+		float: left;
+		border: none;
+		color: #fff;
+		padding: 0 10px;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+	}
+			
+	/*	#primary_nav li.top {
+		display: none;
+	}*/
+			
+	/* access navigation when logged in */
+	#access {
+		position: absolute;
+		top: 56px;
+		right: 10px;
+		background: transparent;
+	}
+	#access ul {
+		list-style: none;
+		color: #fff;
+		line-height:52px;
+		margin-bottom:10px;
+	}
+			
+	#access li {
+		display: inline;
+	}
+			
+	#access li a {
+		float: left;
+		border: none;
+		color: #49afcc;
+		padding: 0 10px;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+	}
+	#access li.top {
+		display: none;
+	}
+	#access li a {
+		display: block;
+		padding: 0 20px;
+		color: #4c4c4c;
+		text-decoration: none;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		letter-spacing: 0.1em;
+		line-height: 2em;
+		height: 2em;
+		/*border-bottom: 1px solid #383838;*/
+	}
+	#access li:last-child a {
+		border-bottom: none;
+	}
+	#access li a:hover,
+	#access li a:focus {
+		color: #fff;
+		background: #ccc;
+	}
+
+	/* styles for the 'highlightnavigation.js file navigation active */
+	#access ul li#iamhere a,
+	#access ul li#iamhere a:link,
+	#access ul li#iamhere a:visited,
+	#access ul li#iamhere a:hover { 	
+		color: #fff;
+		background: #999999;
+	}
+
+	.product-header h3{
+		float:left;
+		max-width: 190px;
+		padding-right: 20px;
+
+	}
+
+	.product {
+		float:left;
+		width: 100px;
+		padding-right: 20px;
+		/*border-style: 1px;
+		border-color: #000;*/
+
+	}
+	
+}

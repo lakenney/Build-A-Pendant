@@ -1,0 +1,247 @@
+/*media queries*/
+
+@media only screen and (min-width: 768px) {
+
+  /*-------------------------------------------------------------------------------------------------
+  General
+  -------------------------------------------------------------------------------------------------*/
+  * {
+  	font-family:Arial;
+  	font-size: 12px;
+  	/*color:#333;*/
+  }
+
+  h1 {	
+  	text-align:left;
+  	font-size:30px;
+    color: #49afcc;
+  	margin-top:25px;
+  	margin-bottom:25px;
+  }
+
+  .pendant {
+    margin-top: 30px;
+
+  }
+  h2 {
+  	font-size:15px;
+    color: #49afcc;
+  	margin-top:30px;
+  	margin-bottom:5px;
+  }
+  .intro-para {
+    font-size:1.2em;
+    color:#878787;
+    line-height: 1.4em;
+    letter-spacing: .8px;
+  }
+
+  small {
+  	font-family:verdana;
+  }
+
+  h2:first-child {
+  	margin-top:0px;
+  }
+
+  .clearfix {
+  	clear:both;
+  }
+
+  .circular {
+  	width: 100px;
+  	height: 100px;
+  	border-radius: 50px;
+  	-webkit-border-radius: 50px;
+  	-moz-border-radius: 50px;
+  }
+
+  input[type=text] {
+    font-family:Arial;
+    font-size: 12px;
+    /*color:#333;*/
+  }
+
+  /*-------------------------------------------------------------------------------------------------
+  Buttons
+  -------------------------------------------------------------------------------------------------*/
+  button, 
+  input[type=button] {
+    background-color: #7fbf4d;
+    background: -webkit-gradient(linear, left to top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
+    background: -webkit-linear-gradient(to bottom, #7fbf4d, #63a62f);
+    background: -moz-linear-gradient(to bottom, #7fbf4d, #63a62f);
+    background: -ms-linear-gradient(to bottom, #7fbf4d, #63a62f);
+    background: -o-linear-gradient(to bottom, #7fbf4d, #63a62f);
+    background: linear-gradient(to bottom, #7fbf4d, #63a62f);
+    border: 1px solid #63a62f;
+    border-bottom: 1px solid #5b992b;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+    box-shadow: inset 0 1px 0 0 #96ca6d;
+    color: #fff;
+    font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    padding: 6px 0 6px 0;
+    position:relative;
+    top:-1px;
+    text-align: center;
+    text-shadow: 0 -1px 0 #4c9021;
+    width: 100px;
+  }
+
+  button,
+  input[type=button]:hover {
+      background-color: #76b347;
+      background: -webkit-gradient(linear, left to bottom, left bottom, color-stop(0%, #76b347), color-stop(100%, #5e9e2e));
+      background: -webkit-linear-gradient(to bottom, #76b347, #5e9e2e);
+      background: -moz-linear-gradient(to bottom, #76b347, #5e9e2e);
+      background: -ms-linear-gradient(to bottom, #76b347, #5e9e2e);
+      background: -o-linear-gradient(to bottom, #76b347, #5e9e2e);
+      background: linear-gradient(to bottom, #76b347, #5e9e2e);
+      -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
+      box-shadow: inset 0 1px 0 0 #8dbf67;
+      cursor: pointer; 
+  }
+
+  button,
+  input[type=button]:active {
+      border: 1px solid #5b992b;
+      border-bottom: 1px solid #538c27;
+      -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+      box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; 
+  }
+
+  /*-------------------------------------------------------------------------------------------------
+  Layout
+  -------------------------------------------------------------------------------------------------*/
+
+  /* Left column */
+  #controls {
+  	width:350px;
+  	margin-right:40px;
+  	float:left;
+  }
+
+  /* Right column */
+  #preview {
+  	/*width:400px;*/
+  	width:330px;
+  	float:left;
+  	text-align:center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  /*-------------------------------------------------------------------------------------------------
+  Output left side background
+  -------------------------------------------------------------------------------------------------*/
+  #output {
+    display: inline;
+    color:#49afcc;
+  }
+
+  /*-------------------------------------------------------------------------------------------------
+  Output right side background
+  -------------------------------------------------------------------------------------------------*/
+  #preview-background {
+
+  	/*border: solid 2px blue;*/
+  	height:500px;
+  	width:340px;
+  	margin:0px auto;
+  }
+
+  #canvas {
+    background-image:url(../images/preview-background.jpg);
+  	/*opacity: 0.2; filter: alpha(opacity=50);
+    background-repeat:no-repeat;  border: solid 2px red;*/
+    width:338px;
+    height:469px;
+    position:relative;
+    z-index:0;
+    overflow:hidden;
+  }
+  #pendant-container {
+  	position: absolute;
+  	width:165px;
+  	height:150px;
+  	top: 320px;
+  	display: table;
+  	left: 80px;
+  }
+  #pendant_c {
+    position: relative;
+    z-index: 5;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+  }
+  #message-window {
+  	position: absolute;
+  	width:165px;
+  	height:150px;
+  	top: 320px;
+  	display: table;
+  	text-align: center;
+  	left: 80px;
+  }
+  #chain-cost-output {
+  	font-size: 12px;
+  }
+  footer {
+    font-family: 'PT Serif', serif;
+    color: #e4e4e4;
+    height: 50px;
+    font-style: italic;
+    text-align: center;
+    vertical-align: -50px;
+    font-size: 14px;
+    background: #49afcc;
+    padding: 0 10px 10px 10px;
+    clear:both;
+  }
+
+  #mySpan {
+    padding-top: 12px;
+  }
+
+
+  /*-------------------------------------------------------------------------------------------------
+  CENTER an image: explicitly tell the browser that the image is a block element. Then you can 
+  center it as you would a block. 
+
+  Place the elements to be centered inside a containing element, such as a DIV.
+  Set a minimum height on the containing element.
+  Declare that that containing element is a table cell.
+  Set the vertical alignment to "middle".
+  <img src="blwebcam-sample.jpg" alt="Suni" class="center" />
+  -------------------------------------------------------------------------------------------------*/
+  img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /*-------------------------------------------------------------------------------------------------
+  The proper way center blocks with CSS is to set both the left and right margins to "auto". As long 
+  as your block has a defined width, it will center itself inside the containing element. But any 
+  text that is contained in the block will not be centered.
+  -------------------------------------------------------------------------------------------------*/
+  div.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em;
+  }
+  /*-------------------------------------------------------------------------------------------------
+  This is how the W3C recommends you center text vertically until CSS 3 support is available.
+  thttp://webdesign.about.com/od/beginningcss/a/aa012207.htm
+  -------------------------------------------------------------------------------------------------*/
+  .vcenter {
+    min-height: 12em;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+
+}
